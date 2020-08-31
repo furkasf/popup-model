@@ -1,3 +1,50 @@
-.container{
-    display: none;
+*,*::after,*::before{
+    box-sizing: border-box;
+}
+.model{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(0);
+    border: 1px solid black;
+    background-color: white;
+    transition: 200ms ease-in-out;
+    border-radius: 12px;
+    width: 500px;
+    max-width: 80%;
+    z-index: 12;
+}
+.model.active{
+    transform: translate(-50%,-50%) scale(1);
+}
+#model-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid black;
+}
+#close{
+    outline: none;
+    cursor: pointer;
+    background: none;
+    border: none;
+    font: bold;
+    font-size: 1.2em;
+}
+#model-body{
+    padding: 15px;
+}
+#overlay{
+    position: fixed;
+    opacity: 0;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+    pointer-events: none;
+}
+#overlay.active{
+    opacity: 1;
 }
